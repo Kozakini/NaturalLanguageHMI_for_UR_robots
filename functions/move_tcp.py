@@ -30,7 +30,11 @@ STEP = 0.1  # 5 cm
 
 
 def move_tcp(direction, step):
-    STEP = step
+    if step < 0.4:
+        STEP = step
+    else:
+        STEP = 0.4
+
     match direction:
         case "up":
             move_up()
